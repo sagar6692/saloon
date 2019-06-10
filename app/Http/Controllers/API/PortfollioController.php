@@ -20,7 +20,7 @@ class PortfollioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function addportfollio(Request $request)
-    {            $token = $request->header('Authorization');
+    {            $token = $request ->header('Authorization'); 
                  $user = User::where('api_token',$token)->first();
                  if($user) {
                 $validator = Validator::make($request->all(),[

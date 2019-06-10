@@ -20,6 +20,7 @@ class FavouriteSaloonController extends Controller
     {
 
                 $token = $request->header('Authorization');
+                
                 $user = User::where('api_token',$token)->first();
                 if($user) {
                 $validator = Validator::make($request->all(),[
